@@ -56,15 +56,17 @@ public class GameLogic : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
-
+      
     public void ReloadLevel()
     {
+        GameScreen.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LoadNextLevel()
     {
         WinScreen.SetActive(false);
+        GameScreen.SetActive(true);
 
         if ((SceneManager.GetActiveScene().buildIndex) == 3)
             SceneManager.LoadScene("Level 1");
